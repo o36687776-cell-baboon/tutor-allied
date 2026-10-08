@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PI AI-ACADEMY — Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <div class="container-fluid p-3">
+    <div id="hero" class="hero mx-auto mb-3">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <div>
+          <h1 class="title">PI AI-ACADEMY <span class="badge-nerd">bootstrap</span></h1>
+          <div class="muted-small">Incubation island — terminal-first, developer-friendly. No login. Instant access.</div>
+        </div>
+        <div class="text-end">
+          <small class="muted-small">Subdomain: <span class="mono">homework-help.online/bootstrap</span></small>
+        </div>
+      </div>
+
+      <div class="terminal p-2 mb-2" id="terminalIntro"></div>
+
+      <div class="d-flex gap-2">
+        <button id="enterBtn" class="btn btn-outline-success">Enter Bootstrap</button>
+        <a href="https://homework-help.online" class="btn btn-outline-secondary">Back to main site</a>
+      </div>
+    </div>
+
+    <div id="product-selection" class="d-none">
+      <h2 class="text-center mb-4">Choose Your Product Category</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100" style="background:rgba(255,255,255,0.02);border-radius:10px;">
+            <div class="card-body text-center">
+              <h5 class="card-title mono">🏢 Enterprise Solutions</h5>
+              <p class="card-text"><strong>Premium Features:</strong><br>• Advanced analytics & monitoring<br>• Enterprise-grade security<br>• 24/7 priority support<br>• Custom integrations<br>• SLA guarantees<br>• Multi-tenant architecture</p>
+              <button class="btn btn-primary" onclick="selectProductType('enterprise')">Select Enterprise</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100" style="background:rgba(255,255,255,0.02);border-radius:10px;">
+            <div class="card-body text-center">
+              <h5 class="card-title mono">👥 Community Projects</h5>
+              <p class="card-text"><strong>Community Benefits:</strong><br>• Free & open-source<br>• Collaborative development<br>• Community support<br>• Learning opportunities<br>• Portfolio building<br>• Real-world experience</p>
+              <button class="btn btn-success" onclick="selectProductType('community')">Select Community</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100" style="background:rgba(255,255,255,0.02);border-radius:10px;">
+            <div class="card-body text-center">
+              <h5 class="card-title mono">👤 Individual Tools</h5>
+              <p class="card-text"><strong>Personal Solutions:</strong><br>• Customizable workflows<br>• Personal productivity<br>• Developer tools<br>• Learning platforms<br>• Portfolio showcase<br>• Flexible pricing</p>
+              <button class="btn btn-outline-secondary" onclick="selectProductType('individual')">Select Individual</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="spa" class="d-none">
+      <nav class="mb-3">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a href="#/" data-link class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#/directory" data-link class="nav-link">Directory</a></li>
+          <li class="nav-item"><a href="#/ide" data-link class="nav-link">IDE</a></li>
+          <li class="nav-item"><a href="#/badges" data-link class="nav-link">Badges</a></li>
+          <li class="nav-item"><a href="#/stakes" data-link class="nav-link">Stakes</a></li>
+        </ul>
+      </nav>
+      <main id="view"></main>
+    </div>
+  </div>
+
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mono">bootstrap @ ai-academy</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body mono">
+          <div id="popupTypewriter"></div>
+          <p class="muted-small">Read the terms of service carefully. By clicking <strong>AGREE</strong> you accept the developer terms and will be routed to the development portal.</p>
+          <p class="note">Community contributions are free. Corporate & Premium projects unlock launch tooling.</p>
+        </div>
+        <div class="modal-footer">
+          <a id="disagreeBtn" href="https://homework-help.online" class="btn btn-outline-danger">DISAGREE</a>
+          <button id="agreeBtn" class="btn btn-success">AGREE & ENTER PORTAL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/selection.js"></script>
+  <script src="js/directory.js"></script>
+  <script src="js/ide.js"></script>
+  <script src="js/badges.js"></script>
+  <script src="js/directory.js"></script>
+  <script src="js/ide.js"></script>
+  <script src="js/badges.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

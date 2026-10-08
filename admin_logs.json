@@ -1,0 +1,199 @@
+[
+    {
+        "timestamp": "2025-09-18 12:39:22",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 13:04:04",
+        "action": "admin_logout",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "session_duration": 1482
+    },
+    {
+        "timestamp": "2025-09-18 13:16:59",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 14:13:06",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 14:13:57",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 14:45:31",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 14:46:05",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 14:49:42",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 15:04:38",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 15:05:58",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 15:06:40",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 20:33:59",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 20:37:52",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 20:38:28",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 20:38:45",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 20:39:52",
+        "action": "admin_logout",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "session_duration": 67
+    },
+    {
+        "timestamp": "2025-09-18 22:22:19",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 22:22:37",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 22:23:35",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 22:23:59",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 22:24:37",
+        "action": "admin_login",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36",
+        "access_code_used": "AIACADEMY2024"
+    },
+    {
+        "timestamp": "2025-09-18 22:38:53",
+        "action": "admin_logout",
+        "user": "osiekoduke@gmail.com",
+        "ip": "::1",
+        "session_duration": 856
+    },
+    {
+        "timestamp": "2025-09-18 23:06:39",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "192.168.100.19",
+        "user_agent": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Mobile Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 23:07:13",
+        "action": "admin_login_failed",
+        "user": "osiekoduke@gmail.com",
+        "ip": "192.168.100.19",
+        "user_agent": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Mobile Safari\/537.36",
+        "reason": "invalid_access_code"
+    },
+    {
+        "timestamp": "2025-09-18 23:08:23",
+        "action": "admin_login_failed",
+        "user": "Osiekoduke@gmail.com",
+        "ip": "192.168.100.19",
+        "user_agent": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Mobile Safari\/537.36",
+        "reason": "invalid_credentials"
+    }
+]

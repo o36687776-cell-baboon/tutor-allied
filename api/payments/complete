@@ -1,0 +1,166 @@
+<?php
+/**
+ * Pi Payment Completion Endpoint - Enhanced Sandbox Version
+ * Called when payment is completed on Pi Network sandbox blockchain
+ * Handles final verification and user access granting
+ */
+
+header('Content-Type: application/json');
+include '../pi_config.php';
+
+// Start session
+$session_path = __DIR__ . '/../sessions';
+if (!is_dir($session_path)) {
+    mkdir($session_path, 0755, true);
+}
+if (session_status() === PHP_SESSION_NONE) {
+    session_save_path($session_path);
+    session_start();
+}
+
+// Log all requests for debugging
+error_log('Payment Completion Request: ' . json_encode($_POST) . ' | Session: ' . session_id());
+
+// Check authentication
+if (!isset($_SESSION['user_id'])) {
+    error_log('Payment completion failed: User not authenticated');
+    echo json_encode([
+        'success' => false,
+        'error' => 'User not authenticated'
+    ]);
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Get payment data
+$input = json_decode(file_get_contents('php://input'), true);
+$payment_id = $input['paymentId'] ?? '';
+$txid = $input['txid'] ?? '';
+$payment_type = $input['type'] ?? 'unknown';
+
+if (!$payment_id || !$txid) {
+    error_log('Payment completion failed: Payment ID and transaction ID required');
+    echo json_encode([
+        'success' => false,
+        'error' => 'Payment ID and transaction ID required'
+    ]);
+    exit;
+}
+
+// Find payment in database
+$payment = fetchOne("SELECT * FROM payments WHERE pi_payment_id = ? AND user_id = ?", [$payment_id, $user_id]);
+
+if (!$payment) {
+    error_log("Payment completion failed: Payment not found for user $user_id, payment $payment_id");
+    echo json_encode([
+        'success' => false,
+        'error' => 'Payment not found in database'
+    ]);
+    exit;
+}
+
+// Verify payment with Pi Network Sandbox
+error_log("Verifying payment $payment_id with Pi Network sandbox for user $user_id");
+
+$verification = PiNetwork::verifyPayment($payment_id);
+
+// Add additional sandbox verification
+$sandbox_verification = verifySandboxPayment($payment_id, $txid, $user_id);
+
+if ($verification['success'] &&
+    isset($verification['data']['status']) &&
+    $verification['data']['status'] === 'completed' &&
+    $sandbox_verification['valid']) {
+
+    error_log("Payment $payment_id verified and completed for user $user_id");
+
+    // Update payment status
+    updatePaymentStatus($payment['id'], 'completed', $payment_id);
+
+    // Process payment based on type
+    $description = strtolower($payment['description']);
+
+    if (strpos($description, 'verification') !== false || $payment_type === 'verification') {
+        // Wallet verification - Grant premium access
+        error_log("Processing wallet verification for user $user_id");
+        verifyWallet($user_id);
+        logUserActivity($user_id, 'wallet_verified', 100, 'Pi wallet verified via sandbox payment');
+
+        // Update user Pi earnings
+        $user = getUserById($user_id);
+        if ($user) {
+            $current_earnings = $user['total_pi_earned'] ?? 0;
+            // Add verification bonus
+            updateUser($user_id, ['total_pi_earned' => $current_earnings + 10]);
+        }
+
+    } elseif (strpos($description, 'premium') !== false) {
+        // Premium subscription
+        error_log("Processing premium subscription for user $user_id");
+        $tier = determineTierFromAmount($payment['amount']);
+        if ($tier) {
+            $expires = date('Y-m-d H:i:s', strtotime('+30 days')); // 30 days subscription
+            updateUserTier($user_id, $tier, $expires);
+            logUserActivity($user_id, 'premium_subscribed', 50, "Subscribed to $tier tier via sandbox payment");
+        }
+    }
+
+    // Log successful payment completion
+    logUserActivity($user_id, 'payment_completed', 10, 'Sandbox payment completed: ' . $payment['amount'] . ' π');
+
+    echo json_encode([
+        'success' => true,
+        'message' => 'Payment completed successfully in Pi Network sandbox',
+        'payment_id' => $payment_id,
+        'txid' => $txid,
+        'amount' => $payment['amount'],
+        'payment_type' => $payment_type,
+        'sandbox_verified' => true
+    ]);
+
+} else {
+    error_log("Payment verification failed for user $user_id, payment $payment_id. Verification: " . json_encode($verification) . ", Sandbox: " . json_encode($sandbox_verification));
+    echo json_encode([
+        'success' => false,
+        'error' => 'Payment verification failed with Pi Network sandbox',
+        'verification_details' => $verification,
+        'sandbox_details' => $sandbox_verification
+    ]);
+}
+
+/**
+ * Additional sandbox payment verification
+ */
+function verifySandboxPayment($payment_id, $txid, $user_id) {
+    // Verify transaction details match our records
+    $payment = fetchOne("SELECT * FROM payments WHERE pi_payment_id = ? AND user_id = ?", [$payment_id, $user_id]);
+
+    if (!$payment) {
+        return ['valid' => false, 'error' => 'Payment record not found'];
+    }
+
+    // Verify amount is reasonable for sandbox
+    if ($payment['amount'] <= 0 || $payment['amount'] > 10000) {
+        return ['valid' => false, 'error' => 'Invalid payment amount'];
+    }
+
+    // Verify transaction ID format (basic check)
+    if (empty($txid) || strlen($txid) < 10) {
+        return ['valid' => false, 'error' => 'Invalid transaction ID'];
+    }
+
+    // Additional sandbox-specific checks can be added here
+
+    return ['valid' => true, 'payment' => $payment];
+}
+
+/**
+ * Determine premium tier based on payment amount
+ */
+function determineTierFromAmount($amount) {
+    if ($amount >= 150) return 'premium_pro';
+    if ($amount >= 50) return 'premium_basic';
+    return null;
+}
+?>

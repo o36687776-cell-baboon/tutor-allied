@@ -1,0 +1,14 @@
+:root{
+  --bg:#071018; --panel:#0f1720; --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  --bash-green: #8aed92; --bash-blue:#7fb6ff; --muted:#9aa6b2;
+}
+body{background:linear-gradient(180deg,#07101a,#081217); color:var(--muted); font-family:Inter,Arial,system-ui;}
+.container-fluid{max-width:1100px}
+.hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01)); padding:1rem; border-radius:10px}
+.title{color:#e6f3ea}
+.badge-nerd{background:rgba(127,182,255,0.06);color:var(--bash-blue);padding:.25rem .5rem;border-radius:6px;font-family:var(--mono)}
+.mono{font-family:var(--mono); color:var(--bash-green)}
+.terminal{background:rgba(0,0,0,0.55); color:var(--bash-green); border-radius:8px; padding:.75rem; font-family:var(--mono)}
+.muted-small{color:#73808a}
+.note{color:#f2c68b}
+.btn-outline-success{border-color:rgba(124,245,155,0.08)}

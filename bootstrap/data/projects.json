@@ -1,0 +1,9 @@
+{
+  "projects": [
+    {"id":"p1","title":"PI Agentic IDE","summary":"Lightweight sandbox for prototyping agentic flows","long":"An in-browser sandbox for prototyping agentic AI workflows for Pi.","type":"community","owner":"pi-community","repo":"https://github.com/example/pi-agentic-ide"},
+    {"id":"p2","title":"PI LLM Libraries","summary":"Shared libraries for Pi-based LLM utilities","long":"Reusable utilities and wrappers for LLMs targeted to PI network applications.","type":"individual","owner":"alice","repo":"https://github.com/example/pi-llm-libs"},
+    {"id":"p3","title":"Enterprise AI Dashboard","summary":"Scalable enterprise-grade AI monitoring and analytics platform","long":"Comprehensive dashboard for monitoring AI models, performance metrics, and business intelligence with enterprise security and compliance features.","type":"enterprise","owner":"corp-ai","repo":"https://github.com/example/enterprise-ai-dashboard"},
+    {"id":"p4","title":"PI Blockchain Explorer","summary":"Advanced blockchain analysis and visualization tool","long":"Professional-grade blockchain explorer with real-time transaction monitoring, smart contract analysis, and advanced visualization for enterprise blockchain operations.","type":"enterprise","owner":"blockchain-corp","repo":"https://github.com/example/pi-blockchain-explorer"},
+    {"id":"p5","title":"Personal AI Assistant","summary":"Customizable AI assistant for individual productivity","long":"Personal AI assistant with customizable workflows, task automation, and integration with popular productivity tools for individual developers and professionals.","type":"individual","owner":"dev-user","repo":"https://github.com/example/personal-ai-assistant"}
+  ]
+}

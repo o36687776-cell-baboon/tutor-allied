@@ -1,0 +1,612 @@
+/* Global CSS for AI-ACADEMY LMS */
+/* Purple-Blue Theme: Primary #6f42c1 (Purple), Secondary #007bff (Blue), BG #f3e5f5 */
+
+:root {
+    --primary-purple: #6f42c1;
+    --secondary-blue: #007bff;
+    --bg-purple: #f3e5f5;
+    --text-dark: #333;
+    --text-light: #fff;
+    --accent-green: #28a745;
+    --accent-red: #dc3545;
+    --accent-yellow: #ffc107;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-purple);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-blue);
+}
+
+.btn-success {
+    background-color: var(--accent-green);
+}
+
+.btn-danger {
+    background-color: var(--accent-red);
+}
+
+.btn-warning {
+    background-color: var(--accent-yellow);
+}
+
+.sidebar {
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: var(--secondary-blue);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    color: var(--text-light) !important;
+    font-weight: 600;
+}
+
+.widget {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent-green);
+    transition: width 0.3s;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: var(--primary-purple);
+    outline: none;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    /* Basic Mobile Layout */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: none; /* Hidden by default on mobile */
+    }
+
+    .sidebar.mobile-open {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* Mobile Navigation */
+    .navbar {
+        padding: 8px 15px;
+        position: relative;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+        margin-right: auto;
+    }
+
+    .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+        background: none;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn:focus {
+        outline: none;
+        color: var(--accent-yellow);
+    }
+
+    /* Mobile Navigation Menu */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-purple);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.25rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: rgba(255,255,255,0.1);
+        transform: translateX(5px);
+    }
+
+    /* Mobile Dropdowns */
+    .dropdown-menu {
+        position: static;
+        float: none;
+        background: rgba(255,255,255,0.1);
+        border: none;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+        box-shadow: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+        color: var(--text-light);
+        padding: 0.75rem 2rem;
+        border-radius: 4px;
+        margin: 0.25rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background: rgba(255,255,255,0.2);
+        color: var(--accent-yellow);
+    }
+
+    /* Mobile Buttons */
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+        min-height: 48px; /* Touch target size */
+        border-radius: 8px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn:not(.btn-sm) {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    /* Mobile Cards */
+    .card {
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    /* Mobile Forms */
+    .form-control {
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+        min-height: 48px;
+        margin-bottom: 1rem;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    /* Mobile Tables */
+    .table-responsive {
+        border-radius: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table th,
+    .table td {
+        padding: 12px 8px;
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+
+    /* Mobile Alerts */
+    .alert {
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Mobile Hero Section */
+    .hero-section {
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-section .lead {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    /* Mobile Feature Cards */
+    .pi-features .row {
+        gap: 1rem;
+    }
+
+    .pi-features .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .feature-card .card {
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mobile Stats */
+    .stats-section .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 1.5rem;
+    }
+
+    .stats-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Mobile Testimonials */
+    .testimonials .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    /* Mobile Footer */
+    footer {
+        text-align: center;
+    }
+
+    footer .row > div {
+        margin-bottom: 2rem;
+    }
+
+    /* Mobile Modal */
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: none;
+    }
+
+    .modal-content {
+        border-radius: 12px;
+    }
+
+    .modal-header,
+    .modal-footer {
+        padding: 1rem 1.5rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    /* Mobile Progress Bars */
+    .progress {
+        height: 8px;
+        border-radius: 4px;
+    }
+
+    /* Mobile Icons */
+    .fas, .far, .fab {
+        font-size: 1.2rem;
+    }
+
+    /* Mobile Spacing */
+    .mb-3 { margin-bottom: 1rem !important; }
+    .mb-4 { margin-bottom: 1.5rem !important; }
+    .mb-5 { margin-bottom: 2rem !important; }
+
+    .mt-3 { margin-top: 1rem !important; }
+    .mt-4 { margin-top: 1.5rem !important; }
+    .mt-5 { margin-top: 2rem !important; }
+
+    .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .py-4 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    .py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+
+    /* Mobile Grid */
+    .row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+
+    /* Mobile Typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+
+    .display-3 { font-size: 3rem; }
+    .display-4 { font-size: 2.5rem; }
+
+    /* Mobile Utilities */
+    .text-center-mobile {
+        text-align: center !important;
+    }
+
+    .d-flex-mobile {
+        display: flex !important;
+    }
+
+    .flex-column-mobile {
+        flex-direction: column !important;
+    }
+
+    .justify-center-mobile {
+        justify-content: center !important;
+    }
+
+    .align-center-mobile {
+        align-items: center !important;
+    }
+}
+
+/* ===== PI BROWSER SPECIFIC OPTIMIZATIONS ===== */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Pi Browser specific styles */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Pi Browser touch targets */
+    .btn, .nav-link, .dropdown-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Pi Browser form inputs */
+    .form-control, .btn {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 8px;
+    }
+
+    /* Pi Browser modal optimizations */
+    .modal {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* ===== TABLET OPTIMIZATIONS ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .pi-features .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        padding: 1rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== HIGH DPI MOBILE DISPLAYS ===== */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+}
+
+/* ===== MOBILE ACCESSIBILITY ===== */
+@media (max-width: 768px) {
+    /* Focus indicators for keyboard navigation */
+    .btn:focus,
+    .form-control:focus,
+    .nav-link:focus {
+        outline: 2px solid var(--secondary-blue);
+        outline-offset: 2px;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .btn {
+            border: 2px solid;
+        }
+
+        .card {
+            border: 1px solid var(--text-dark);
+        }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .btn,
+        .card,
+        .navbar-nav .nav-link {
+            transition: none;
+        }
+    }
+}
