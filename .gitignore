@@ -1,0 +1,48 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Sessions and logs
+sessions/*
+logs/*
+temp/*
+!sessions/.gitkeep
+!logs/.gitkeep
+!temp/.gitkeep
+
+# Database
+*.sql
+!db_schema.sql
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer
+vendor/
+composer.phar
+
+# Node
+node_modules/
+
+# Build
+docker/
+*.log
+error_log
+
+# Backup files
+*_backup.php
+*.bak
+
+# SSL certificates
+*.pem
+*.key
+*.crt

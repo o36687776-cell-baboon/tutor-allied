@@ -176,6 +176,50 @@ chmod -R 777 /var/www/html/logs/
 # Configure HTTPS redirects
 ```
 
+### 🚂 Railway Deployment (Recommended)
+
+Railway provides the easiest deployment with managed MySQL and automatic HTTPS.
+
+#### Quick Deploy
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/ai-academy)
+
+#### Manual Setup
+1. **Fork/Clone** this repository to GitHub
+2. **Create Railway Project** at [railway.app](https://railway.app)
+3. **Add MySQL Service**: New → Database → MySQL
+4. **Connect Repository**: Deploy from GitHub → Select this repo
+5. **Set Environment Variables**:
+   ```
+   DB_HOST=mysql.railway.internal
+   DB_NAME=railway
+   DB_USER=root
+   DB_PASS=<from MySQL service>
+   PI_APP_API_KEY=<your_pi_sandbox_key>
+   PI_NETWORK_SANDBOX=true
+   APP_ENV=production
+   ```
+6. **Deploy** - Railway auto-detects Dockerfile and builds
+
+#### Railway Features
+- ✅ Managed MySQL with auto-backups
+- ✅ Automatic HTTPS (custom domains supported)
+- ✅ Auto-deploy on git push
+- ✅ Environment variable management
+- ✅ Logs and metrics dashboard
+- ✅ $5/month free tier credit
+
+### 🐳 Docker Deployment
+
+```bash
+# Build and run locally
+docker-compose up -d
+
+# Access:
+# App: http://localhost:8080
+# phpMyAdmin: http://localhost:8081
+# MySQL: localhost:3306 (root/root)
+```
+
 ---
 
 ## 📱 Mobile Access

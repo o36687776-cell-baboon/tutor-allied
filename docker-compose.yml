@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-academy-app
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=ai_academy
+      - DB_USER=root
+      - DB_PASS=root
+      - PI_APP_API_KEY=${PI_APP_API_KEY}
+      - PI_NETWORK_SANDBOX=true
+      - APP_ENV=production
+    volumes:
+      - ./sessions:/var/www/html/sessions
+      - ./logs:/var/www/html/logs
+      - ./temp:/var/www/html/temp
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: ai-academy-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ai_academy
+      - MYSQL_CHARSET=utf8mb4
+      - MYSQL_COLLATION=utf8mb4_general_ci
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_schema.sql:/docker-entrypoint-initdb.d/db_schema.sql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Optional: phpMyAdmin for database management
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: ai-academy-phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  db_data:
